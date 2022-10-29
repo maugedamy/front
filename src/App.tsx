@@ -115,19 +115,64 @@ function App() {
 
   return (
     <div>
-      <div className="d-flex m-1">
+      <h1 className="centered">Products Management</h1>
+      <form onSubmit={handleSubmit} className="centered form">
+        <input
+          className="centered inputs"
+          ref={inputNombre}
+          placeholder={"name"}
+          name={"name"}
+          onChange={handleChange}
+        />
+
+        <input
+          className="centered inputs"
+          ref={inputMarca}
+          placeholder={"marca"}
+          name={"marca"}
+          onChange={handleChange}
+        />
+
+        <input
+          className="centered inputs"
+          ref={inputPrice}
+          placeholder={"price"}
+          type={"number"}
+          name={"price"}
+          onChange={handleChange}
+        />
+
+        <button>Enviar</button>
+      </form>
+
+      <div className="inline">
         {products?.map((product) => {
           return (
-            <div className="d-flex">
-              <div key={product.id} className="m-1">
-                <div className="bg-primary p-1">
-                  <p>{product.name}</p>
-                  <p>{product.marca}</p>
-                  <p>{product.price}</p>
-                  <button onClick={(e) => handleEdition(e, product)}>
+            <div className="flex width100">
+              <div key={product.id} className="m-1 width100">
+                <div className="bg-primary p-1 flex width100">
+                  <div className="centered m-1">
+                    <p>{product.name}</p>
+                  </div>
+
+                  <div className="centered m-1">
+                    <p>{product.marca}</p>
+                  </div>
+
+                  <div className="centered m-1">
+                    <p>{product.price}</p>
+                  </div>
+
+                  <button
+                    className="centered m-1 button"
+                    onClick={(e) => handleEdition(e, product)}
+                  >
                     Edit
                   </button>
-                  <button onClick={(e) => handleDelete(e, product.id)}>
+                  <button
+                    className="centered m-1 button"
+                    onClick={(e) => handleDelete(e, product.id)}
+                  >
                     Delete
                   </button>
                 </div>
@@ -136,28 +181,6 @@ function App() {
           );
         })}
       </div>
-      <form onSubmit={handleSubmit}>
-        <input
-          ref={inputNombre}
-          placeholder={"name"}
-          name={"name"}
-          onChange={handleChange}
-        />
-        <input
-          ref={inputMarca}
-          placeholder={"marca"}
-          name={"marca"}
-          onChange={handleChange}
-        />
-        <input
-          ref={inputPrice}
-          placeholder={"price"}
-          type={"number"}
-          name={"price"}
-          onChange={handleChange}
-        />
-        <button>Enviar</button>
-      </form>
     </div>
   );
 }

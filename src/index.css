@@ -12,15 +12,42 @@ code {
     monospace;
 }
 
-/* .d-flex {
+.flex {
   display: flex;
-} */
+}
+
+.inlineflex {
+  display: inline-flex;
+}
+
 .m-1 {
   margin: 1rem;
 }
 .bg-primary {
-  background-color: grey;
+  background-color: rgba(101, 175, 76, 0.699);
+  justify-content: space-evenly;
+  font-weight: 500;
 }
 .p-1 {
   padding: 1rem;
+}
+
+.centered {
+  text-align: center;
+}
+
+.inputs {
+  font-size: 1rem;
+}
+
+.width100 {
+  width: 100%;
+}
+
+button {
+  background-color: rgba(230, 170, 80, 0.699);
+  width: 5%;
+  border-radius: 10%;
+  border-color: rgb(73, 72, 72);
+  font-weight: 400;
 }
