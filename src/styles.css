@@ -1,0 +1,12 @@
+.d-flex {
+  display: flex;
+}
+​ .m-1 {
+  margin: 1rem;
+}
+​ .bg-primary {
+  background-color: blue;
+}
+​ .p-1 {
+  padding: 1rem;
+}
